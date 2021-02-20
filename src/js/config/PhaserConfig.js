@@ -4,7 +4,7 @@ import GameScene from "../scene/GameScene";
 import UIScene from "../scene/UIScene";
 
 export default {
-  type: Phaser.WEBGL,
+  type: Phaser.AUTO,
   scale: {
     fullscreenTarget: "app",
     parent: "app",

@@ -253,7 +253,9 @@ export default class Planet {
 
     // there are ships to send
     if (ships.length > 0) {
-      ships.forEach((ship) => ship.onAttack(planet));
+      for (let i = ships.length - 1; i >= 0; i--) {
+        ships[i].onAttack(planet);
+      }
       return ships;
     } else {
       return false;

@@ -1,5 +1,6 @@
 import Phaser from "phaser";
-import images from "../../assets/*.png";
+import planetImage from "../../assets/planet.png";
+import aresImage from "../../assets/ares.png";
 
 const progress_id = "load-progress";
 
@@ -39,15 +40,13 @@ export default class MenuScene extends Phaser.Scene {
   }
 
   preload() {
-    console.table(images);
+    // console.table(images);
 
-    for (const key in images) {
-      this.load.image(key, images[key]);
-    }
-    // this.load.image("logo", images.logo);
-    // this.load.image("red", images.red);
-    // this.load.image("planet", images.planet);
-    // this.load.image("planet_sharp", images.planet_sharp);
+    // for (const key in images) {
+    //   this.load.image(key, images[key]);
+    // }
+    this.load.image("planet", planetImage);
+    this.load.image("ares", aresImage);
 
     setProgress(false);
     this.load.on("progress", logProgress);
