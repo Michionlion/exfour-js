@@ -1,0 +1,62 @@
+@bg: grey;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font: caption;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#app,
+#app canvas {
+  margin: 0;
+  padding: 0;
+  background-color: @bg;
+  width: 100%;
+  height: 100%;
+}
+
+#load-progress {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  height: 0.75em;
+  top: 2em;
+  left: 40%;
+  width: 20%;
+}
+
+#load-progress:indeterminate {
+  opacity: 0.6;
+  transition: opacity 2.5s linear;
+}
+
+#delta {
+  padding: 5px;
+  position: absolute;
+  top: 0.15em;
+  left: 0.2em;
+  color: #fff3ef;
+}
+
+#info {
+  padding: 5px;
+  position: absolute;
+  top: 0.15em;
+  right: calc(0.2em + 20px);
+  color: #fff3ef;
+}
+
+.fade.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.25s linear;
+}
+
+.fade.hidden {
+  visibility: hidden;
+  opacity: 0 !important;
+  transition: visibility 0s 1.5s, opacity 1.5s linear !important;
+}
