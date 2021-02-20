@@ -9,7 +9,8 @@
   "private": true,
   "scripts": {
     "clean": "rm -rf dist/*",
-    "build": "parcel build src/index.html --public-url ./ --experimental-scope-hoisting",
+    "build": "parcel build src/index.html --public-url ./ --experimental-scope-hoisting --target browser",
+    "build-docker": "yarn clean && yarn build && docker build -f Dockerfile -t exfour .",
     "watch": "parcel watch src/index.html",
     "serve": "parcel serve src/index.html",
     "test": "jest",

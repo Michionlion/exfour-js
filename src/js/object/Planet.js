@@ -268,8 +268,9 @@ export default class Planet {
       mouse.rightButtonDown() &&
       Phaser.Math.Distance.BetweenPointsSquared(this.visual, {
         x: mouse.worldX,
-        y: mouse.worldY
-      }) < this.orbitalRadius*this.orbitalRadius
+        y: mouse.worldY,
+      }) <
+        this.orbitalRadius * this.orbitalRadius
     ) {
       for (let i = 25; i--; ) {
         let ship = globalThis.GAME.makeShip();
