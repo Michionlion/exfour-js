@@ -1,11 +1,12 @@
 # --- Compile ---
-# FROM node:15.8.0 AS base
-# COPY . .
-# RUN yarn install --dev
-# RUN yarn build
+FROM node AS base
+WORKDIR /exfour
+COPY . /exfour
+RUN yarn install
+RUN yarn build
 
 # --- Deploy ---
 FROM nginx
+WORKDIR /srv
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-# COPY --from=base dist /srv
-COPY dist /srv
+COPY --from=base /exfour/dist /srv
